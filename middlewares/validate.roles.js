@@ -38,8 +38,6 @@ const permissionRole = ( roles = [] ) => {
 							code: 500
 						});
 		
-		console.log( user );
-		console.log( user.role );
 
 		if( ! roles.includes( user.role ) )
 			return res.status( 401 )
