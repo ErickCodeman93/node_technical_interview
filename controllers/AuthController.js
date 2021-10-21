@@ -39,7 +39,8 @@ const login = async ( req = request, res = response ) => {
 		res.json({
 			msg: 'login ok',
 			user,
-			token
+			token,
+			code: 200,
 		});
 
 	} //end try 
@@ -66,8 +67,9 @@ const signIn = async( req = request, res = response ) => {
 		if( found )
 			return res.status( 400 )
 					.json({
+						code: 400,
 						msg: 'Error',
-						error: 'existing user'
+						error: 'Usuario Existente'
 					});
 			 
 
@@ -84,6 +86,7 @@ const signIn = async( req = request, res = response ) => {
 
 		res.json({
 			msg: 'success',
+			code: 200,
 		});
 
 	} //end try 

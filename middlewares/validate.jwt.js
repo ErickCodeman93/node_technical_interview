@@ -9,7 +9,8 @@ const validateJWT = async ( req = request, res = response, next ) => {
 	if( ! token ) 
 		return res.status( 401 )
 					.json({
-						msg:'No existe el token'
+						msg:'No existe el token',
+						code: 401,
 					});
 
 	try {
@@ -24,7 +25,8 @@ const validateJWT = async ( req = request, res = response, next ) => {
 		if( ! user )
 			return res.status( 401 )
 						.json({
-							msg: 'Token no valido - no existe el usuario'
+							msg: 'Token no valido - no existe el usuario',
+							code: 401
 						});
 
 		req.user = user;
@@ -37,7 +39,8 @@ const validateJWT = async ( req = request, res = response, next ) => {
 		console.log( error );
 		res.status( 401 )
 					.json({
-						msg:'Token no valido'
+						msg:'Token no valido',
+						code: 401
 					});
 	} // end catch
 

@@ -7,6 +7,7 @@ const getAllUsers = ( req = request, res = response ) => {
 	res.json({
 		msg: 'ok',
 		users,
+		code: 200,
 	});
 
 } //end function

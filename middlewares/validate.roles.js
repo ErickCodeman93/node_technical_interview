@@ -8,7 +8,8 @@ const adminRole = ( req = request, res = response, next ) => {
 	if( ! user )
 		return res.status( 500 )
 					.json({
-						msg: 'Falta token para verificar el rol'
+						msg: 'Falta token para verificar el rol',
+						code: 500
 					});
 
 	const { role, name } = user;
@@ -16,7 +17,8 @@ const adminRole = ( req = request, res = response, next ) => {
 	if( role !== 'ADMIN_ROLE' )
 		return res.status( 401 )
 					.json({
-						msg: `${ name } no es administrador`
+						msg: `${ name } no es administrador`,
+						code: 401
 					});
 					
 
@@ -32,7 +34,8 @@ const permissionRole = ( roles = [] ) => {
 		if( ! user )
 			return res.status( 500 )
 						.json({
-							msg: 'Falta token para verificar el rol'
+							msg: 'Falta token para verificar el rol',
+							code: 500
 						});
 		
 		console.log( user );
@@ -41,7 +44,8 @@ const permissionRole = ( roles = [] ) => {
 		if( ! roles.includes( user.role ) )
 			return res.status( 401 )
 						.json({
-							msg: `El servicio requiere uno de estos roles ${ roles }`
+							msg: `El servicio requiere uno de estos roles ${ roles }`,
+							code: 401
 						});			
 			
 		next();
