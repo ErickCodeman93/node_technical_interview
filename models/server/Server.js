@@ -33,7 +33,29 @@ class Server {
 		this.app.use( express.json() );
 
 		// Directorio publico
-		this.app.use( express.static( 'public' ) ); 
+		this.app.use( express.static( 'public' ) )
+		.get('/', function ( req, res ) {
+			console.log('Registro');
+			res
+				.status( 200 )
+				.set( { 'content-type': 'text/html; charset=utf-8;' } )
+				.sendfile('public/index.html' );
+		})
+		.get('/home', function ( req, res ) {
+			console.log('Home');
+			res
+				.status( 200 )
+				.set( { 'content-type': 'text/html; charset=utf-8;' } )
+				.sendfile('public/index.html' );
+		})
+		.get('/login', function ( req, res ) {
+			console.log('');
+			res
+				.status( 200 )
+				.set( { 'content-type': 'text/html; charset=utf-8;' } )
+				.sendfile('public/index.html' );
+		}); 
+		
 		
 	} //end method
 

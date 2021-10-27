@@ -1,1 +1,1 @@
-[]
+[{"ID":1,"email":"erick@gmail.com","password":"$2a$10$nFbyqwwart1JvttSdSGiCuYQpR5hDlwr5FpffAx2HmnR9vrJRLe3a","role":"ADMIN_ROLE"},{"ID":2,"email":"ana@gmail.com","password":"$2a$10$6zBVDR14JrH9muQxIExc8uXlKQ9yj4wtvd3/3eYgNxn8MIh1.zA6i","role":"USER_ROLE"},{"ID":3,"email":"victoria@gmail.com","password":"$2a$10$nTa9BNMMz6.7IgT.N.N4UeqAijj4XwolU28c9zIiDEq8L9eQYMMG6","role":"ADMIN_ROLE"}]
